@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Yield Prediction - KrishiKalp</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="service-detail.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../auth-guard.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">KrishiKalp</div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="../Market Place Page/Marketplace.html">Marketplace</a>
+                <a href="../Community/Community.html">Community</a>
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="service-detail-header">
+        <div class="service-header-content">
+            <i class="fas fa-chart-bar"></i>
+            <h1>Crop Yield Prediction</h1>
+            <p>Advanced analytics to predict crop yields based on historical data and conditions.</p>
+        </div>
+    </section>
+
+    <main class="service-detail-container">
+        
+        <div class="service-description">
+            <h2>How It Works</h2>
+            <p>Our prediction engine uses machine learning to analyze various factors, including your location, historical weather patterns, soil type, and crop choice. By providing a few key details about your farm, you can get a reliable estimate of your potential harvest tonnage or bushel count before the season even ends.</p>
+            <br>
+            <h3>Key Benefits:</h3>
+            <ul>
+                <li><strong>Plan Logistics:</strong> Know how much storage, transportation, and labor you'll need at harvest time.</li>
+                <li><strong>Secure Financing:</strong> Use reliable yield estimates to secure loans or investments for your farm.</li>
+                <li><strong>Manage Inventory:</strong> Make informed decisions about pre-selling your crop or holding for a better price.</li>
+                <li><strong>Optimize Inputs:</strong> Adjust fertilizer and water usage based on predicted outcomes to maximize profitability.</li>
+            </ul>
+        </div>
+
+        <aside class="service-tool">
+            <h3>Predict Your Yield</h3>
+            <p>Provide details about your farm and crop.</p>
+            
+            <form id="yield-form" class="service-form">
+                <div class="form-group">
+                    <label for="location">Your Location (District, State)</label>
+                    <input type="text" id="location" name="location" placeholder="e.g., Bhopal, Madhya Pradesh" required>
+                </div>
+                
+                <div class="form-group-grid">
+                    <div class="form-group">
+                        <label for="crop-type">Select Your Crop</label>
+                        <select id="crop-type" name="crop_type" required>
+                            <option value="">-- Select --</option>
+                            <option value="wheat">Wheat</option>
+                            <option value="rice">Rice</option>
+                            <option value="soybean">Soybean</option>
+                            <option value="maize">Maize</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="area">Area (in Hectares)</label>
+                        <input type="number" id="area" name="area" placeholder="e.g., 10" required>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="soil-type">Soil Type</label>
+                    <select id="soil-type" name="soil_type" required>
+                        <option value="">-- Select --</option>
+                        <option value="alluvial">Alluvial</option>
+                        <option value="black">Black (Regular)</option>
+                        <option value="red">Red</option>
+                        <option value="laterite">Laterite</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="cta-button" style="width: 100%;">Predict Yield</button>
+            </form>
+
+            <div id="yield-result" class="service-result" style="display: none;">
+                <h4>Predicted Yield Estimate:</h4>
+                <p id="result-text"></p>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 KrishiKalp. All rights reserved.</p>
+    </footer>
+    <script src="service-worker.js" defer></script>
+</body>
+</html>

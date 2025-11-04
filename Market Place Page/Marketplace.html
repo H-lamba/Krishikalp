@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrishiKalp Marketplace</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="marketplace.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- === START: AUTH GUARD & SCRIPT LOADING (FIXED ORDER) === -->
+    
+    <!-- 1. Load Supabase Library FIRST -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- 2. Load Auth Guard SECOND (it creates _supabase) -->
+    <script src="../auth-guard.js" defer></script>
+    
+    <!-- 3. Load Marketplace Script THIRD (it uses _supabase) -->
+    <script src="marketplace.js" defer></script>
+    
+    <!-- === END: AUTH GUARD & SCRIPT LOADING === -->
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">KrishiKalp</div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../Services/services.html">Services</a>
+                <a href="Marketplace.html" class="active">Marketplace</a>
+                <a href="../Community/Community.html">Community</a>
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Marketplace Content -->
+    <div class="marketplace-container">
+        <!-- Categories Section -->
+        <div class="categories">
+            <h2>Categories</h2>
+            <ul class="category-list">
+                <!-- Categories will be dynamically populated by JavaScript -->
+            </ul>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="products-section">
+            <div class="products-header">
+                <h1>Farmers' Marketplace</h1>
+                <div class="filters">
+                    <select name="sort" id="sort">
+                        <option value="newest">Newest Listings</option>
+                        <option value="price-low">Price: Low to High</option>
+                        <option value="price-high">Price: High to Low</option>
+                        <option value="quantity">Quantity Available</option>
+                    </select>
+                    <select name="location" id="location">
+                        <option value="">All Locations</option>
+                        <option value="north">North India</option>
+                        <option value="south">South India</option>
+                        <option value="east">East India</option>
+                        <option value="west">West India</option>
+                    </select>
+                    <button class="filter-btn"><i class="fas fa-filter"></i> More Filters</button>
+                </div>
+            </div>
+
+            <div class="sell-button-container">
+                <button class="sell-crops-btn" onclick="openListingModal()"><i class="fas fa-plus"></i> List Your Crops</button>
+            </div>
+
+            <!-- View Details Modal -->
+            <div id="detailsModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal" onclick="closeDetailsModal()">&times;</span>
+                    <div class="product-details">
+                        <div class="details-header">
+                            <h2 id="detailsTitle"></h2>
+                            <div class="farmer-details">
+                                <img id="detailsFarmerImg" src="https://placehold.co/80x80/EBF8E1/2E7D32?text=Farmer" alt="Farmer" class="farmer-pic-large" onerror="this.src='https://placehold.co/80x80/EBF8E1/2E7D32?text=Farmer'">
+                                <div class="farmer-info-details">
+                                    <h3 id="detailsFarmerName"></h3>
+                                    <p id="detailsLocation"></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="details-content">
+                            <div class="details-images">
+                                <img id="detailsMainImage" src="https://placehold.co/600x400/EBF8E1/2E7D32?text=Crop" alt="Product" class="main-image" onerror="this.src='https://placehold.co/600x400/EBF8E1/2E7D32?text=Crop'">
+                                <div class="image-thumbnails" id="imageThumbnails">
+                                    <!-- Thumbnails will be added here -->
+                                </div>
+                            </div>
+                            <div class="details-info">
+                                <div class="info-row">
+                                    <span class="label">Category:</span>
+                                    <span id="detailsCategory"></span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="label">Price:</span>
+                                    <span id="detailsPrice"></span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="label">Quantity Available:</span>
+                                    <span id="detailsQuantity"></span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="label">Quality Grade:</span>
+                                    <span id="detailsGrade"></span>
+                                </div>
+                                <div class="info-row">
+                                    <span class="label">Harvest Date:</span>
+                                    <span id="detailsHarvestDate"></span>
+                                </div>
+                                <div class="description-box">
+                                    <h4>Description</h4>
+                                    <p id="detailsDescription"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Farmer Modal -->
+            <div id="contactModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal" onclick="closeContactModal()">&times;</span>
+                    <div class="contact-header">
+                        <img id="contactFarmerImg" src="https://placehold.co/100x100/EBF8E1/2E7D32?text=Farmer" alt="Farmer" class="farmer-pic-large" onerror="this.src='https://placehold.co/100x100/EBF8E1/2E7D32?text=Farmer'">
+                        <div>
+                            <h2>Contact Farmer</h2>
+                            <p id="contactFarmerName"></p>
+                            <p id="contactLocation"></p>
+                            <div class="farmer-contact-info">
+                                <p><i class="fas fa-phone"></i> <span id="contactFarmerPhone"></span></p>
+                                <p><i class="fas fa-map-marker-alt"></i> <span id="contactFarmerAddress"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-group">
+                            <label for="contactName">Your Name*</label>
+                            <input type="text" id="contactName" name="contactName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactEmail">Your Email*</label>
+                            <input type="email" id="contactEmail" name="contactEmail" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactPhone">Your Phone Number*</label>
+                            <input type="tel" id="contactPhone" name="contactPhone" pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contactMessage">Message*</label>
+                            <textarea id="contactMessage" name="contactMessage" rows="4" required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="interestedQuantity">Interested Quantity*</label>
+                            <div class="quantity-input">
+                                <input type="number" id="interestedQuantity" name="interestedQuantity" min="1" required>
+                                <span id="quantityUnit"></span>
+                            </div>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="cancel-btn" onclick="closeContactModal()">Cancel</button>
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Crop Listing Modal -->
+            <div id="listingModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-modal">&times;</span>
+                    <h2>List Your Crops</h2>
+                    <form id="cropListingForm" class="listing-form">
+                        <div class="form-group">
+                            <label for="cropCategory">Crop Category*</label>
+                            <select id="cropCategory" name="cropCategory" required>
+                                <!-- Categories will be populated by JavaScript -->
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="cropName">Crop Name*</label>
+                            <select id="cropName" name="cropName" required>
+                                <option value="">First select a category</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Quantity Available*</label>
+                            <div class="quantity-input">
+                                <input type="number" id="quantity" name="quantity" min="1" required>
+                                <select id="quantityUnit" name="quantityUnit">
+                                    <option value="kg">Kilograms</option>
+                                    <option value="quintal">Quintals</option>
+                                    <option value="ton">Tons</option>
+                                    <option value="dozen">Dozens</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="price">Price per Unit*</label>
+                            <div class="price-input">
+                                <span class="currency">₹</span>
+                                <input type="number" id="price" name="price" min="0" step="0.01" required>
+                            </div>
+                        </div>
+                        
+                        <!-- NEW FIELD FOR PHONE NUMBER -->
+                        <div class="form-group">
+                            <label for="phone_number">Contact Phone Number*</label>
+                            <input type="tel" id="phone_number" name="phone_number" placeholder="e.g., 9876543210" pattern="[0-9]{10}" title="Please enter a valid 10-digit phone number" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="listingLocation">Location*</label>
+                            <select id="listingLocation" name="listingLocation" required>
+                                <option value="">Select Location</option>
+                                <option value="north">North India</option>
+                                <option value="south">South India</option>
+                                <option value="east">East India</option>
+                                <option value="west">West India</option>
+                                <option value="central">Central India</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="specific-location">Specific Location*</label>
+                            <input type="text" id="specific-location" name="specific-location" placeholder="City, State" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="description">Description*</label>
+                            <textarea id="description" name="description" rows="4" placeholder="Describe your crop quality, harvesting date, etc." required></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label for="cropImage">Crop Images</label>
+                            <input type="file" id="cropImage" name="cropImage" accept="image/*" multiple>
+                            <p class="help-text">You can upload up to 5 images</p>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="cancel-btn" onclick="closeListingModal()">Cancel</button>
+                            <button type="submit" class="submit-btn">List Crop</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <div class="products-grid">
+                <!-- Products will be loaded here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 KrishiKalp Marketplace. All rights reserved.</p>
+    </footer>
+</body>
+</html>

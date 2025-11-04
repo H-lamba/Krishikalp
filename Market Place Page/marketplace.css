@@ -1,0 +1,556 @@
+/* Marketplace Specific Styles */
+.marketplace-container {
+    padding-top: 80px;
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 80px 2rem 2rem 2rem;
+}
+
+/* Categories Sidebar */
+.categories {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    height: fit-content;
+}
+
+.category-list {
+    list-style: none;
+    padding: 0;
+}
+
+.category-list li {
+    margin: 1rem 0;
+}
+
+.category-list a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s;
+    display: block;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+
+.category-list a:hover, .category-list a.active {
+    color: var(--primary-color);
+    background-color: #f0f8f0;
+}
+
+/* Products Section */
+.products-section {
+    width: 100%;
+}
+
+.products-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.filters {
+    display: flex;
+    gap: 1rem;
+}
+
+.filters select, .filter-btn {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: white;
+    cursor: pointer;
+}
+
+.filter-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Sell Button Container */
+.sell-button-container {
+    text-align: right;
+    margin-bottom: 2rem;
+}
+
+.sell-crops-btn {
+    background: var(--primary-color);
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background-color 0.3s;
+}
+
+.sell-crops-btn:hover {
+    background: var(--secondary-color);
+}
+
+/* Products Grid */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.product-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+}
+
+.farmer-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.8rem;
+    border-bottom: 1px solid #eee;
+}
+
+.farmer-pic {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.product-card img:not(.farmer-pic) {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-card h3, .product-card p {
+    padding: 0.5rem 1rem;
+    margin: 0;
+}
+
+.location {
+    color: #666;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.price {
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.quantity {
+    color: #444;
+    font-size: 0.9rem;
+}
+
+.description {
+    color: #666;
+    font-size: 0.9rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.card-actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    padding: 1rem;
+}
+
+.contact-farmer, .view-details {
+    padding: 0.8rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.contact-farmer {
+    background: var(--primary-color);
+    color: white;
+}
+
+.view-details {
+    background: #f0f0f0;
+    color: var(--text-color);
+}
+
+.contact-farmer:hover {
+    background: var(--secondary-color);
+}
+
+.view-details:hover {
+    background: #e0e0e0;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    overflow-y: auto;
+}
+
+.modal-content {
+    background-color: white;
+    margin: 2rem auto;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 800px;
+    position: relative;
+    animation: modalSlideIn 0.3s ease-out;
+}
+
+/* Product Details Modal Styles */
+.product-details {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.details-header {
+    border-bottom: 1px solid #eee;
+    padding-bottom: 1rem;
+}
+
+.farmer-details {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.farmer-pic-large {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.farmer-info-details h3 {
+    margin: 0;
+    color: var(--text-color);
+}
+
+.details-content {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 2rem;
+}
+
+.details-images {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.main-image {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.image-thumbnails {
+    display: flex;
+    gap: 0.5rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+}
+
+.thumbnail {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity 0.3s;
+}
+
+.thumbnail:hover {
+    opacity: 0.8;
+}
+
+.details-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.label {
+    color: #666;
+    font-weight: 500;
+}
+
+.description-box {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #f9f9f9;
+    border-radius: 5px;
+}
+
+.description-box h4 {
+    margin: 0 0 0.5rem 0;
+}
+
+/* Contact Farmer Modal Styles */
+.contact-header {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #eee;
+}
+
+.contact-form {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.contact-header img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.contact-header h2 {
+    margin: 0 0 0.5rem 0;
+}
+
+.contact-header p {
+    margin: 0;
+    color: #666;
+}
+
+.farmer-contact-info {
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid #eee;
+}
+
+.farmer-contact-info p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.5rem 0;
+    color: #333;
+}
+
+.farmer-contact-info i {
+    color: var(--primary-color);
+    width: 20px;
+}
+
+.hidden-info {
+    display: none;
+}
+
+.farmer-contact {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.3rem 0;
+}
+
+.farmer-contact i {
+    color: var(--primary-color);
+    width: 20px;
+}
+
+@keyframes modalSlideIn {
+    from {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.close-modal {
+    position: absolute;
+    right: 1.5rem;
+    top: 1rem;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.close-modal:hover {
+    color: #333;
+}
+
+/* Listing Form Styles */
+.listing-form {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.listing-form .form-group {
+    display: grid;
+    gap: 0.5rem;
+}
+
+.listing-form label {
+    font-weight: 500;
+    color: #444;
+}
+
+.listing-form input,
+.listing-form select,
+.listing-form textarea {
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.listing-form textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.quantity-input,
+.price-input {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.quantity-input input {
+    flex: 2;
+}
+
+.quantity-input select {
+    flex: 1;
+}
+
+.price-input {
+    position: relative;
+}
+
+.price-input .currency {
+    position: absolute;
+    left: 0.8rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.price-input input {
+    padding-left: 2rem;
+}
+
+.help-text {
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 0.3rem;
+}
+
+.form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+    margin-top: 1rem;
+}
+
+.cancel-btn,
+.submit-btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s;
+}
+
+.cancel-btn {
+    background: #f0f0f0;
+    border: none;
+    color: #333;
+}
+
+.submit-btn {
+    background: var(--primary-color);
+    border: none;
+    color: white;
+}
+
+.cancel-btn:hover {
+    background: #e0e0e0;
+}
+
+.submit-btn:hover {
+    background: var(--secondary-color);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .marketplace-container {
+        grid-template-columns: 1fr;
+    }
+
+    .products-header {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: flex-start;
+    }
+
+    .filters {
+        width: 100%;
+    }
+
+    .filters select {
+        flex: 1;
+    }
+
+    .modal-content {
+        margin: 1rem;
+        padding: 1.5rem;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions button {
+        width: 100%;
+    }
+}
+
+/* Active Navigation Link */
+.nav-links a.active {
+    color: var(--primary-color);
+    font-weight: bold;
+}

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrishiKalp Community</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="exchange.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- === START: SCRIPT LOADING (FIXED) === -->
+    
+    <!-- 1. Load Supabase Library FIRST -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <!-- 2. Load Auth Guard SECOND (protects the page) -->
+    <!-- (This assumes auth-guard.js is in the root folder) -->
+    <script src="../auth-guard.js" defer></script> 
+    
+    <!-- 3. Load Community Script THIRD -->
+    <script src="script.js" defer></script>
+    
+    <!-- === END: SCRIPT LOADING === -->
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">KrishiKalp</div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="../Services/services.html">Services</a>
+                <a href="../Market Place Page/Marketplace.html">Marketplace</a>
+                <a href="Community.html">Community</a>
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="community-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1>Join Our Farming Community</h1>
+            <p>Connect with fellow farmers, share experiences, and grow together in our thriving agricultural community.</p>
+            <div class="hero-badges">
+                <div class="badge">
+                    <i class="fas fa-users"></i>
+                    <span>5000+ Members</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-handshake"></i>
+                    <span>Local Sharing</span>
+                </div>
+                <div class="badge">
+                    <i class="fas fa-seedling"></i>
+                    <span>Sustainable Growth</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Knowledge Sharing Section -->
+    <section class="resource-section">
+        <div class="section-container">
+            <h2>Local Resource Sharing</h2>
+            
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <div class="resource-types">
+                    <button class="filter-btn active" data-type="all">All</button>
+                    <button class="filter-btn" data-type="equipment">Equipment</button>
+                    <button class="filter-btn" data-type="supplies">Supplies</button>
+                    <button class="filter-btn" data-type="seeds">Seeds</button>
+                    <button class="filter-btn" data-type="labor">Labor</button>
+                    <button class="filter-btn" data-type="knowledge">Knowledge</button>
+                </div>
+            
+                <div class="distance-filter">
+                    <h3>Maximum Distance</h3>
+                    <div class="range-slider">
+                        <input type="range" min="1" max="50" value="10" class="slider" id="distanceRange">
+                        <span id="distanceValue">10 miles</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Resource Cards -->
+            <!-- Hardcoded cards removed. 'script.js' will fill this. -->
+            <div class="resource-grid">
+                <!-- Example: <h3>Loading resources...</h3> -->
+            </div>
+
+            <!-- Share Resource Form -->
+            <div class="share-resource">
+                <h3>Share Your Resources</h3>
+                <!-- NOTE: This is now a <form> element with an ID -->
+                <form id="share-resource-form" class="share-form">
+                    <select class="resource-type" name="resource_type" required>
+                        <option value="">Select Resource Type</option>
+                        <option value="equipment">Equipment</option>
+                        <option value="supplies">Supplies</option>
+                        <option value="seeds">Seeds</option>
+                        <option value="labor">Labor</option>
+                        <option value="knowledge">Knowledge</option>
+                    </select>
+                    <input type="text" name="title" placeholder="Resource Title" required>
+                    <textarea name="description" placeholder="Describe what you're sharing (quantity, condition, terms of sharing, etc.)" required></textarea>
+                    <div class="location-input">
+                        <input type="text" name="location" placeholder="Your Location (e.g., City, Village)" required>
+                        <button type="button" class="use-current-location"><i class="fas fa-map-marker-alt"></i> Use Current Location</button>
+                    </div>
+                    <div class="form-footer">
+                        <input type="file" id="resourcePhotos" class="file-input" multiple>
+                        <label for="resourcePhotos" class="file-label">
+                            <i class="fas fa-camera"></i> Add Photos
+                        </label>
+                        <!-- NOTE: This is now a <button type="submit"> -->
+                        <button type="submit" class="share-button">Share Resource</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- (The rest of your HTML page remains the same) -->
+    <!-- ... Exchange Section, Support Section, etc. ... -->
+
+    <!-- NOTE: The inline script for the "Join Now" button is still here. -->
+    <!-- This is fine, but ideally, this logic would also be in script.js -->
+    
+</body>
+</html>

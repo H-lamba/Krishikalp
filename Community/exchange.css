@@ -1,0 +1,143 @@
+.exchange-section {
+    background: #edf7ff;
+    padding: 4rem 1rem;
+    margin: 0;
+}
+
+.exchange-section .section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.exchange-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #1a4159;
+    margin-bottom: 2.5rem;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+.exchange-section h2:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: #3498db;
+    border-radius: 2px;
+}
+
+.exchange-grid {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 0.5rem;
+    scrollbar-width: thin;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -1rem;
+    padding: 0.5rem 1rem;
+}
+
+.exchange-grid::-webkit-scrollbar {
+    height: 6px;
+}
+
+.exchange-grid::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.exchange-grid::-webkit-scrollbar-thumb {
+    background: #28a745;
+    border-radius: 10px;
+}
+
+.exchange-card {
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 1rem;
+    transition: transform 0.3s;
+    min-width: 280px;
+    max-width: 300px;
+    flex: 0 0 auto;
+}
+
+.exchange-card:hover {
+    transform: translateY(-5px);
+}
+
+.exchange-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.exchange-header i {
+    font-size: 1.5rem;
+    color: #28a745;
+}
+
+.exchange-header h3 {
+    font-size: 1.1rem;
+    margin: 0;
+}
+
+.exchange-content h4 {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+}
+
+.exchange-content p {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    color: #666;
+}
+
+.exchange-details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    margin: 0.5rem 0;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.exchange-details span i {
+    margin-right: 0.5rem;
+    color: #28a745;
+    width: 16px;
+}
+
+.offering .exchange-header {
+    color: #28a745;
+}
+
+.seeking .exchange-header {
+    color: #dc3545;
+}
+
+.contact-farmer {
+    width: 100%;
+    padding: 0.6rem;
+    background: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 0.9rem;
+}
+
+.contact-farmer:hover {
+    background: #218838;
+}
+
+.contact-farmer.clicked {
+    background: #666;
+    pointer-events: none;
+}

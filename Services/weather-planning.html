@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather-Based Planning - KrishiKalp</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="service-detail.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../auth-guard.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">KrishiKalp</div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="../Market Place Page/Marketplace.html">Marketplace</a>
+                <a href="../Community/Community.html">Community</a>
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="service-detail-header">
+        <div class="service-header-content">
+            <i class="fas fa-cloud-sun-rain"></i>
+            <h1>Weather-Based Planning</h1>
+            <p>Smart farming schedules based on weather forecasts and seasonal patterns.</p>
+        </div>
+    </section>
+
+    <main class="service-detail-container">
+        
+        <div class="service-description">
+            <h2>How It Works</h2>
+            <p>Farming is dictated by the weather. Our planning tool integrates hyper-local, real-time weather forecasts to give you a 7-day operations calendar. It provides alerts and recommendations for optimal times to plant, irrigate, fertilize, or harvest, helping you work *with* the weather, not against it.</p>
+            <br>
+            <h3>Key Benefits:</h3>
+            <ul>
+                <li><strong>Optimize Timing:</strong> Know the perfect window to plant for best germination or to harvest for peak quality.</li>
+                <li><strong>Protect Crops:</strong> Receive advance alerts for frost, heavy rain, or extreme heat so you can take protective measures.</li>
+                <li><strong>Efficient Resource Use:</strong> Avoid irrigating right before a rainstorm or spraying pesticides when winds are high.</li>
+                <li><strong>Improve Safety:</strong> Plan your field operations around safe weather conditions for you and your team.</li>
+            </ul>
+        </div>
+
+        <aside class="service-tool">
+            <h3>Get Your Farm Forecast</h3>
+            <p>Enter your location to get a 7-day plan.</p>
+            
+            <form id="weather-form" class="service-form">
+                <div class="form-group">
+                    <label for="location">Enter your ZIP/Pincode or City</label>
+                    <input type="text" id="location" name="location" placeholder="e.g., 462011" required>
+                </div>
+
+                <button type="submit" class="cta-button" style="width: 100%;">Get 7-Day Plan</button>
+            </form>
+
+            <div id="weather-result" class="service-result" style="display: none;">
+                <h4>Your 7-Day Farm Plan:</h4>
+                <p id="result-text"></p>
+                </div>
+        </aside>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 KrishiKalp. All rights reserved.</p>
+    </footer>
+    <script src="service-worker.js" defer></script>
+</body>
+</html>

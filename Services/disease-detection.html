@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Disease Detection - KrishiKalp</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="service-detail.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../auth-guard.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">KrishiKalp</div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="../Market Place Page/Marketplace.html">Marketplace</a>
+                <a href="../Community/Community.html">Community</a>
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="service-detail-header">
+        <div class="service-header-content">
+            <i class="fas fa-virus"></i>
+            <h1>Plant Disease Detection</h1>
+            <p>AI-powered detection of plant diseases from images with treatment recommendations.</p>
+        </div>
+    </section>
+
+    <main class="service-detail-container">
+        
+        <div class="service-description">
+            <h2>How It Works</h2>
+            <p>Our powerful AI model has been trained on millions of images to identify common and rare plant diseases. Just upload a clear photo of the affected plant (leaf, stem, or fruit), and our system will analyze it in seconds to provide a diagnosis and actionable treatment advice.</p>
+            <br>
+            <h3>Key Benefits:</h3>
+            <ul>
+                <li><strong>Early Detection:</strong> Catch diseases before they spread to your entire crop, saving your harvest.</li>
+                <li><strong>Instant Diagnosis:</strong> No more guessing. Get an accurate identification in under a minute.</li>
+                <li><strong>Reduce Pesticide Use:</strong> Our targeted treatment plans help you use the right product in the right amount, saving money and protecting the environment.</li>
+                <li><strong>Actionable Advice:</strong> We don't just tell you the problem; we provide organic and chemical treatment options.</li>
+            </ul>
+        </div>
+
+        <aside class="service-tool">
+            <h3>Upload Your Image</h3>
+            <p>Get an instant analysis of your plant's health.</p>
+            
+            <form id="disease-form" class="service-form">
+                <div class="form-group">
+                    <label for="plant-image">Upload Plant Image (Leaf/Stem)</label>
+                    <input type="file" id="plant-image" name="file" accept="image/*" required>
+                </div>
+
+                <button type="submit" class="cta-button" style="width: 100%;">Analyze Image</button>
+            </form>
+
+            <div id="disease-result" class="service-result" style="display: none;">
+                <h4>Analysis Result:</h4>
+                <p id="result-text"></p>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 KrishiKalp. All rights reserved.</p>
+    </footer>
+    <script src="service-worker.js" defer></script>
+</body>
+</html>

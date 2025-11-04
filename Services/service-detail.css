@@ -1,0 +1,166 @@
+/* =======================================
+   SERVICE DETAIL PAGE STYLES
+   ======================================= */
+
+:root {
+    --primary-color: #4CAF50;
+    --light-bg: #f9f9f9;
+}
+
+/* --- Header Section --- */
+.service-detail-header {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1920');
+    background-size: cover;
+    background-position: center;
+    padding: 8rem 2rem 4rem 2rem;
+    text-align: center;
+    color: white;
+    margin-top: 60px; /* Adjust for fixed header */
+}
+
+.service-header-content i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.service-header-content h1 {
+    font-size: 3rem;
+    margin-bottom: 0.5rem;
+}
+
+.service-header-content p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0.9;
+}
+
+/* --- Main Content Area --- */
+.service-detail-container {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+}
+
+/* --- Left Side: Description --- */
+.service-description h2 {
+    font-size: 2rem;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 3px solid var(--primary-color);
+    display: inline-block;
+}
+
+.service-description p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.service-description ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.service-description li {
+    position: relative;
+    padding-left: 30px;
+    font-size: 1.05rem;
+    margin-bottom: 1rem;
+}
+
+.service-description li::before {
+    content: '\f00c'; /* Font Awesome check icon */
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    color: var(--primary-color);
+    position: absolute;
+    left: 0;
+    top: 2px;
+    font-size: 1.1rem;
+}
+
+/* --- Right Side: Tool/Form --- */
+.service-tool {
+    background: var(--light-bg);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    position: sticky; /* Makes the form stick on scroll */
+    top: 100px; /* (header height + margin) */
+}
+
+.service-tool h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.service-tool > p {
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.service-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+}
+
+.form-group-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+.service-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+}
+
+.service-form label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.service-form input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.service-result {
+    margin-top: 1.5rem;
+    background: #e6f7ff;
+    border: 1px solid #b3e0ff;
+    padding: 1rem;
+    border-radius: 5px;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 900px) {
+    .service-detail-container {
+        grid-template-columns: 1fr; /* Stack columns */
+    }
+
+    .service-tool {
+        position: static; /* Un-stick the form */
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .service-detail-header h1 {
+        font-size: 2.2rem;
+    }
+    .form-group-grid {
+        grid-template-columns: 1fr; /* Stack form fields */
+    }
+}

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services - KrishiKalp</title>
+    <!-- Corrected Paths -->
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .services-header {
+            padding-top: 10rem;
+            padding-bottom: 4rem;
+            background: #f8f9fa;
+            text-align: center;
+        }
+        .services-header h1 {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        .services-header p {
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+    </style>
+    <script src="../auth-guard.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">KrishiKalp</div>
+            <div class="nav-links">
+                <!-- Corrected Paths -->
+                <a href="../index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="../Market Place Page/Marketplace.html">Marketplace</a>
+                <a href="../Community/Community.html">Community</a>
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Services Header -->
+    <section class="services-header">
+        <h1>Our Services</h1>
+        <p>Comprehensive solutions to empower modern farming, from soil analysis to market insights. Explore how we can help you grow.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="services-grid">
+            
+            <!-- All links point to the local files -->
+            <a href="crop-recommendation.html" class="service-card">
+                <i class="fas fa-seedling"></i>
+                <h3>Crop Recommendations</h3>
+                <p>Get personalized crop suggestions based on soil type, climate, and season for optimal yield</p>
+            </a>
+            
+            <a href="disease-detection.html" class="service-card">
+                <i class="fas fa-virus"></i>
+                <h3>Plant Disease Detection</h3>
+                <p>AI-powered detection of plant diseases from images with treatment recommendations</p>
+            </a>
+            
+            <a href="fertilizer-recommendation.html" class="service-card">
+                <i class="fas fa-flask"></i>
+                <h3>Fertilizer Recommendation</h3>
+                <p>Custom fertilizer suggestions based on soil nutrient analysis and crop requirements</p>
+            </a>
+            
+            <a href="yield-prediction.html" class="service-card">
+                <i class="fas fa-chart-bar"></i>
+                <h3>Crop Yield Prediction</h3>
+                <p>Advanced analytics to predict crop yields based on historical data and conditions</p>
+            </a>
+            
+            <a href="weather-planning.html" class="service-card">
+                <i class="fas fa-cloud-sun-rain"></i>
+                <h3>Weather-Based Planning</h3>
+                <p>Smart farming schedules based on weather forecasts and seasonal patterns</p>
+            </a>
+            
+            <a href="market-prediction.html" class="service-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Market Price Prediction</h3>
+                <p>Predictive analytics for crop prices to help you maximize profits</p>
+            </a>
+            
+            <a href="irrigation-management.html" class="service-card">
+                <i class="fas fa-water"></i>
+                <h3>Irrigation Management</h3>
+                <p>Smart water management solutions for optimal crop irrigation</p>
+            </a>
+            
+            <a href="expert-consultation.html" class="service-card">
+                <i class="fas fa-hands-helping"></i>
+                <h3>Expert Consultation</h3>
+                <p>Connect with agricultural experts for personalized guidance and support</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 KrishiKalp. All rights reserved.</p>
+    </footer>
+    <script src="service-worker.js" defer></script>
+</body>
+</html>

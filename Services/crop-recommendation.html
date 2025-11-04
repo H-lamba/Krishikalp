@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crop Recommendations - KrishiKalp</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="service-detail.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="../auth-guard.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">KrishiKalp</div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="../Market Place Page/Marketplace.html">Marketplace</a>
+                <a href="../Community/Community.html">Community</a>
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="service-detail-header">
+        <div class="service-header-content">
+            <i class="fas fa-seedling"></i>
+            <h1>Crop Recommendations</h1>
+            <p>Get personalized crop suggestions based on your soil and local climate.</p>
+        </div>
+    </section>
+
+    <main class="service-detail-container">
+        
+        <div class="service-description">
+            <h2>How It Works</h2>
+            <p>Our advanced algorithm analyzes key environmental and soil data to recommend the most profitable and suitable crops for your farm. By inputting your soil's nutrient profile and your location, you can maximize your yield and minimize risk.</p>
+            <br>
+            <h3>Key Benefits:</h3>
+            <ul>
+                <li><strong>Increase Yield:</strong> Plant crops that are scientifically proven to thrive in your specific conditions.</li>
+                <li><strong>Reduce Waste:</strong> Avoid planting crops that are likely to fail, saving you time, water, and fertilizer.</li>
+                <li><strong>Improve Soil Health:</strong> Receive suggestions for crop rotation to keep your soil fertile for years to come.</li>
+                <li><strong>Boost Profits:</strong> Combine our recommendations with our Market Price Prediction service to see which crops are in high demand.</li>
+            </ul>
+        </div>
+
+        <aside class="service-tool">
+            <h3>Get Your Recommendation</h3>
+            <p>Enter your soil and weather data below.</p>
+            
+            <form id="recommendation-form" class="service-form">
+                <div class="form-group-grid">
+                    <div class="form-group">
+                        <label for="nitrogen">Nitrogen (N) (kg/ha)</label>
+                        <input type="number" id="nitrogen" name="nitrogen" placeholder="e.g., 90" required>
+                    </div>
+                    <div class="form-group">
+    <label for="humidity">Average Humidity (%)</label>
+    <input type="number" id="humidity" name="humidity" step="0.1" placeholder="e.g., 82.5" required>
+</div>
+                    <div class="form-group">
+                        <label for="phosphorus">Phosphorus (P) (kg/ha)</label>
+                        <input type="number" id="phosphorus" name="phosphorus" placeholder="e.g., 42" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="potassium">Potassium (K) (kg/ha)</label>
+                        <input type="number" id="potassium" name="potassium" placeholder="e.g., 43" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="ph">Soil pH</label>
+                        <input type="number" id="ph" name="ph" step="0.1" placeholder="e.g., 6.5" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="rainfall">Average Annual Rainfall (mm)</label>
+                    <input type="number" id="rainfall" name="rainfall" placeholder="e.g., 200" required>
+                </div>
+                <div class="form-group">
+                    <label for="temperature">Average Temperature (°C)</label>
+                    <input type="number" id="temperature" name="temperature" step="0.1" placeholder="e.g., 25.5" required>
+                </div>
+
+                <button type="submit" class="cta-button" style="width: 100%;">Analyze & Recommend</button>
+            </form>
+
+            <div id="recommendation-result" class="service-result" style="display: none;">
+                <h4>Recommended Crop:</h4>
+                <p id="result-text"></p>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 KrishiKalp. All rights reserved.</p>
+    </footer>
+    <script src="service-worker.js" defer></script>
+</body>
+</html>

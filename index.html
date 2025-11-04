@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrishiKalp - Your Agricultural Partner</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- 1. ADD SUPABASE LIBRARY -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">KrishiKalp</div>
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="Services/services.html">Services</a>
+                <a href="Market Place Page/Marketplace.html">Marketplace</a>
+                <a href="Community/Community.html">Community</a>
+                <a href="#about">About</a>
+                <a href="#contact">Contact</a>
+                <a href="#" id="login-button" class="cta-button" style="padding: 0.5rem 1rem;">Login</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Growing Together for a Better Tomorrow</h1>
+            <p>Your trusted partner in modern agriculture and farming solutions</p>
+            <a href="Services/services.html" class="cta-button">Explore Our Services</a>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="section-title">
+            <h2>Our Key Services</h2>
+            <p>Empowering farmers with data-driven solutions</p>
+        </div>
+        <div class="services-grid">
+            
+            <a href="Services/crop-recommendation.html" class="service-card">
+                <i class="fas fa-seedling"></i>
+                <h3>Crop Recommendations</h3>
+                <p>Personalized crop suggestions based on your soil, climate, and season.</p>
+            </a>
+            
+            <a href="Services/disease-detection.html" class="service-card">
+                <i class="fas fa-virus"></i>
+                <h3>Plant Disease Detection</h3>
+                <p>AI-powered detection of plant diseases from just an image.</p>
+            </a>
+            
+            <a href="Services/market-prediction.html" class="service-card">
+                <i class="fas fa-chart-line"></i>
+                <h3>Market Price Prediction</h3>
+                <p>Predictive analytics for crop prices to help you maximize profits.</p>
+            </a>
+
+        </div>
+        
+        <div class="services-view-all">
+            <a href="Services/services.html" class="cta-button">View All Services</a>
+        </div>
+        
+    </section>
+    
+    <!-- Marketplace Section (FIXED HTML) -->
+    <section class="marketplace-preview" id="marketplace-section">
+        <div class="marketplace-content">
+            <div class="marketplace-text">
+                <h2>Discover Our Farmers' Marketplace</h2>
+                <p>Connect directly with local farmers, find fresh produce, and support sustainable agriculture</p>
+            </div>
+
+            <div class="marketplace-features">
+                <div class="feature">
+                    <i class="fas fa-handshake"></i>
+                    <h3>Direct Trading</h3>
+                    <p>Connect directly with buyers without intermediaries</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h3>Better Prices</h3>
+                    <p>Get the best prices for your agricultural products</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Fresh Produce</h3>
+                    <p>Direct from local farms to your table</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-users"></i>
+                    <h3>Community Support</h3>
+                    <p>Support local farmers and sustainable practices</p>
+                </div>
+                <!-- THESE 2 FEATURES WERE OUTSIDE THE GRID -->
+                <div class="feature">
+                    <i class="fas fa-globe"></i>
+                    <h3>Wide Reach</h3>
+                    <p>Access buyers from across the country</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-user-check"></i>
+                    <h3>Verified Buyers</h3>
+                    <p>Trade with confidence through our verified network</p>
+                </div>
+            </div> <!-- THIS DIV WAS MISSING -->
+            
+            <div class="marketplace-actions">
+                <a href="Market Place Page/Marketplace.html" class="primary-btn">Visit Marketplace</a>
+                <a href="Market Place Page/Marketplace.html.#listingModal" class="secondary-btn">List Your Crops</a>
+            </div>
+            <div class="marketplace-stats">
+                <div class="stat">
+                    <span class="stat-number">1000+</span>
+                    <span class="stat-label">Active Listings</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">5000+</span>
+                    <span class="stat-label">Registered Farmers</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">₹10Cr+</span>
+                    <span class="stat-label">Monthly Trading</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-container">
+            <div class="about-content">
+                <h2>About FarmConnect</h2>
+                <p>We are dedicated to empowering farmers with modern technology and sustainable farming practices. Our platform brings together expertise, technology, and community to help farmers thrive.</p>
+                <p>With years of experience in agricultural services, we understand the challenges farmers face and provide innovative solutions to address them.</p>
+            </div>
+            <img src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=600" alt="Farming" class="about-image">
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with our agricultural experts</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-card">
+                        <i class="fas fa-phone"></i>
+                        <h3>Phone</h3>
+                        <p>Mobile: +91 7891280266</p>
+                        <p>Helpline: 1800-123-4567</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <h3>Address</h3>
+                        <p>FarmConnect Headquarters</p>
+                        <p>MP Nagar, Zone-1</p>
+                        <p>Bhopal, Madhya Pradesh</p>
+                        <p>India - 462011</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Email</h3>
+                        <p>support@farmconnect.com</p>
+                        <p>info@farmconnect.com</p>
+                    </div>
+                    <div class="info-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Working Hours</h3>
+                        <p>Monday - Saturday</p>
+                        <p>9:00 AM - 6:00 PM</p>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="cta-button">Send Message</p>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 FarmConnect. All rights reserved.</p>
+    </footer>
+
+    <!-- 2. UPDATED LOGIN MODAL -->
+    <div id="login-modal" class="modal-overlay">
+        <div class="modal-content">
+            <!-- Use new ID -->
+            <button id="login-modal-close" class="modal-close">&times;</button>
+            <div class="modal-body">
+                <h2>Welcome Back</h2>
+                <p>Login to access your dashboard and marketplace.</p>
+
+                <form id="login-form">
+                    <!-- Add message div -->
+                    <div class="form-message"></div>
+                    <div class="form-group">
+                        <label for="login-email">Email</label>
+                        <input type="email" id="login-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" name="password" required>
+                    </div>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                    <button type="submit" class="cta-button" style="width: 100%;">Login</button>
+                </form>
+
+                <div class="modal-footer">
+                    <!-- Use new ID -->
+                    <p>Don't have an account? <a href="#" id="show-signup-link">Sign Up</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 3. ADD NEW SIGN UP MODAL -->
+    <div id="signup-modal" class="modal-overlay">
+        <div class="modal-content">
+            <button id="signup-modal-close" class="modal-close">&times;</button>
+            <div class="modal-body">
+                <h2>Create Account</h2>
+                <p>Join FarmConnect today. It's free and only takes a minute.</p>
+                <form id="signup-form">
+                    <div class="form-message"></div>
+                    <div class="form-group">
+                        <label for="signup-name">Full Name</label>
+                        <input type="text" id="signup-name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-email">Email</label>
+                        <input type="email" id="signup-email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-password">Password</label>
+                        <input type="password" id="signup-password" name="password" minlength="6" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="signup-confirm-password">Confirm Password</label>
+                        <input type="password" id="signup-confirm-password" name="confirm_password" minlength="6" required>
+                    </div>
+                    <button type="submit" class="cta-button" style="width: 100%;">Create Account</button>
+                </form>
+                <div class="modal-footer">
+                    <p>Already have an account? <a href="#" id="show-login-link">Login</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. REMOVE DUPLICATE FOOTER AND OLD SCRIPT -->
+    <!-- The duplicate footer that was here is removed -->
+    <!-- The old <script> that was here is removed -->
+    
+    <!-- 5. ADD NEW SCRIPT LOADER -->
+    <script type="module" src="auth.js"></script>
+
+</body>
+</html>
+

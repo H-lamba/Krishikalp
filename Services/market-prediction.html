@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Price Prediction - KrishiKalp</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="service-detail.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="../auth-guard.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">KrishiKalp</div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="../Market Place Page/Marketplace.html">Marketplace</a>
+                <a href="../Community/Community.html">Community</a>
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="service-detail-header">
+        <div class="service-header-content">
+            <i class="fas fa-chart-line"></i>
+            <h1>Market Price Prediction</h1>
+            <p>Predictive analytics for crop prices to help you maximize profits.</p>
+        </div>
+    </section>
+
+    <main class="service-detail-container">
+        
+        <div class="service-description">
+            <h2>How It Works</h2>
+            <p>Timing the market is key to profitability. Our model analyzes historical market (mandi) prices, current supply levels, import/export trends, and seasonal demand to forecast where prices are heading. This empowers you to decide whether to sell your harvest immediately or store it for a better price.</p>
+            <br>
+            <h3>Key Benefits:</h3>
+            <ul>
+                <li><strong>Maximize Profit:</strong> Sell your crop when the price is at its peak, not when it's convenient.</li>
+                <li><strong>Negotiate Better Prices:</strong> Enter negotiations with buyers armed with data on future price trends.</li>
+                <li><strong>Reduce Risk:</strong> Avoid price crashes by selling before the market gets flooded.</li>
+                <li><strong>Plan Future Crops:</strong> Use long-range forecasts to decide which crops will be most profitable next season.</li>
+            </ul>
+        </div>
+
+        <aside class="service-tool">
+            <h3>Check Market Trends</h3>
+            <p>Select a crop and timeframe to see the forecast.</p>
+            
+            <form id="market-form" class="service-form">
+                <div class="form-group">
+                    <label for="crop-type">Select Your Crop</label>
+                    <select id="crop-type" name="crop_type" required>
+                        <option value="">-- Please Select --</option>
+                        <option value="wheat">Wheat</option>
+                        <option value="rice">Rice</option>
+                        <option value="soybean">Soybean</option>
+                        <option value="tomato">Tomato</option>
+                        <option value="onion">Onion</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="market-location">Your Nearest Market (Mandi)</label>
+                    <input type="text" id="market-location" name="market_location" placeholder="e.g., Bhopal Mandi" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="timeframe">Select Forecast Period</label>
+                    <select id="timeframe" name="timeframe" required>
+                        <option value="1">Next 1 Month</option>
+                        <option value="3">Next 3 Months</option>
+                        <option value="6">Next 6 Months</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="cta-button" style="width: 100%;">Get Price Forecast</button>
+            </form>
+
+            <div id="market-result" class="service-result" style="display: none;">
+                <h4>Predicted Price Range (per Quintal):</h4>
+                <p id="result-text"></p>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 KrishiKalp. All rights reserved.</p>
+    </footer>
+    <script src="service-worker.js" defer></script>
+</body>
+</html>

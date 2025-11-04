@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irrigation Management - KrishiKalp</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact.css">
+    <link rel="stylesheet" href="service-detail.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- === START: AUTH GUARD === -->
+    <!-- 1. Load Supabase Library FIRST -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <!-- 2. Load your new guard script SECOND (note the ../ path) -->
+    <script src="../auth-guard.js" defer></script>
+    <!-- === END: AUTH GUARD === -->
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">KrishiKalp</div>
+            <div class="nav-links">
+                <a href="../index.html">Home</a>
+                <a href="services.html">Services</a>
+                <a href="../Market Place Page/Marketplace.html">Marketplace</a>
+                <a href="../Community/Community.html">Community</a>
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="service-detail-header">
+        <div class="service-header-content">
+            <i class="fas fa-water"></i>
+            <h1>Irrigation Management</h1>
+            <p>Smart water management solutions for optimal crop irrigation.</p>
+        </div>
+    </section>
+
+    <main class="service-detail-container">
+        
+        <div class="service-description">
+            <h2>How It Works</h2>
+            <p>Water is your most precious resource. This tool helps you use it wisely by calculating your crop's precise water needs (evapotranspiration) based on local weather, soil type, and crop growth stage. It tells you not just *when* to irrigate, but *how much* water to apply for maximum efficiency.</p>
+            <br>
+            <h3>Key Benefits:</h3>
+            <ul>
+                <li><strong>Conserve Water:</strong>Drastically reduce your water consumption and lower your pumping costs.</li>
+                <li><strong>Prevent Water Stress:</strong> Ensure your crops get the water they need during critical growth stages.</li>
+                <li><strong>Avoid Root Rot:</strong> Prevent over-watering, which can lead to fungal diseases and poor root health.</li>
+                <li><strong>Increase Yield Quality:</strong> Proper hydration leads to better fruit and vegetable quality.</li>
+            </ul>
+        </div>
+
+        <aside class="service-tool">
+            <h3>Calculate Irrigation Needs</h3>
+            <p>Enter your crop and soil details.</p>
+            
+            <form id="irrigation-form" class="service-form">
+                <!-- THIS DIV WRAPS ALL GRID ITEMS -->
+                <div class="form-group-grid">
+                    <div class="form-group">
+                        <label for="crop-type">Select Your Crop</label>
+                        <!-- FIX: name="crop_type" -->
+                        <select id="crop-type" name="crop_type" required>
+                            <option value="">-- Select --</option>
+                            <option value="wheat">Wheat</option>
+                            <option value="rice">Rice</option>
+                            <option value="maize">Maize</option>
+                            <option value="sugarcane">Sugarcane</option>
+                        </select>
+                    </div>
+                     <div class="form-group">
+                        <label for="soil-type">Soil Type</label>
+                        <!-- FIX: name="soil_type" -->
+                        <select id="soil-type" name="soil_type" required>
+                            <option value="">-- Select --</option>
+                            <option value="sandy">Sandy (Low retention)</option>
+                            <option value="loamy">Loamy (Medium retention)</option>
+                            <option value="clay">Clay (High retention)</option>
+                        </select>
+                    </div>
+                
+                    <!-- FIX: MOVED THIS BLOCK INSIDE THE GRID -->
+                    <div class="form-group">
+                        <label for="last-rain">Days Since Last Rain/Irrigation</label>
+                        <!-- FIX: name="last_rain" -->
+                        <input type="number" id="last-rain" name="last_rain" placeholder="e.g., 3" required>
+                    </div>
+    
+                    <!-- FIX: MOVED THIS BLOCK INSIDE THE GRID -->
+                    <div class="form-group">
+                        <label for="temp">Current Avg. Temperature (°C)</label>
+                        <input type="number" id="temp" name="temp" placeholder="e.g., 32" required>
+                    </div>
+                </div> <!-- <-- THE GRID DIV NOW ENDS HERE -->
+
+                <button type="submit" class="cta-button" style="width: 100%;">Calculate</button>
+            </form>
+
+            <div id="irrigation-result" class="service-result" style="display: none;">
+                <h4>Irrigation Recommendation:</h4>
+                <p id="result-text"></p>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2025 KrishiKalp. All rights reserved.</p>
+    </footer>
+    <script src="service-worker.js" defer></script>
+</body>
+</html>
+
